@@ -26,7 +26,14 @@ app.use(express.json());
 					// open new browser page
 					const page = await browser.newPage();
 					// fill content with user submitted html and css
-					await page.setContent(`<style>${req.body.css}</style><div>${req.body.html}</div>`);
+					await page.setContent(
+						`<style>
+							${req.body.css}
+						</style>
+						<div style="height: fit-content;width: fit-content">
+							${req.body.html}
+						</div>`
+					);
 					// define content area to take screenshot
 					const content = await page.$('div');
 					// take screenshot in content area, save buffer
