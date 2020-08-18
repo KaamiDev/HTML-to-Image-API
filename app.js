@@ -13,7 +13,7 @@ app.use(express.json());
 // initialize puppeteer function
 (async () => {
 	// launch headless browser
-	const browser = await puppeteer.launch();
+	const browser = await puppeteer.launch({ headless: true, args: [ '--no-sandbox' ] });
 
 	// post request is made to render
 	app.post('/render', (req, res) => {

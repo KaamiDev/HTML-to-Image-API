@@ -1,13 +1,13 @@
 # HTML to Image
-API to convert HTML and CSS code into a lossless image using Node.js with puppeteer and a headless chromium browser.
+API to convert HTML and CSS code into a lossless png image using Node.js with puppeteer and a headless chromium browser.
 
 ### How it works
-1. HTML and CSS data is substituted into a html template.
+1. HTML and CSS data is substituted into an html page template.
 1. That template is then opened via a headless browser on the server.
-1. A screenshot it taken of the page.
-1. Screenshot is converted into a base64 image that is sent as a response.
+1. A screenshot it taken of the html page.
+1. The screenshot is converted into a base64 image that is sent as a response.
 
-### GET: `/render`
+### POST: `/render`
 Sample Request:
 
 ```
