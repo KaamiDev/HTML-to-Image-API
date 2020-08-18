@@ -1,6 +1,13 @@
 // require modules
 require('dotenv').config();
 const express = require('express');
+const puppeteer = require('puppeteer');
+
+// initialize puppeteer
+const browser = async () => {
+	const browser = await puppeteer.launch();
+	return browser;
+};
 
 // initialize app
 const app = express();
